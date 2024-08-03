@@ -1,0 +1,323 @@
+.nav{
+  background: rgba(0, 0, 0, 0.5);
+  font-size:39px;
+}
+.nav a{
+  color: white;
+  text-decoration: none;
+  margin: 20%;
+}
+
+#container{
+  border: 3px solid white;
+  background-color: white;
+  border-radius: 15px;
+  width: 600px;
+  height: 750px;
+  margin-top: 50px;
+}
+
+#form_heading{
+  margin-top: 80px;
+}
+
+#heading{
+  text-align: left;
+  font-size: 15px;
+  margin-left: 110px;
+  color: rgba(17,133,123,255);
+  margin-top: 30px;
+}
+
+#input{
+  font-size: 17px;
+  background-color: rgba(246,246,246,255);
+  border: 3px solid rgba(246,246,246,255);
+  border-radius: 15px;
+  width: 380px;
+  height: 40px;
+}
+
+#feedback{
+  font-size: 17px;
+  resize: none;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgba(246,246,246,255);
+  border: 3px solid rgba(246,246,246,255);
+  border-radius: 15px;
+  width: 380px;
+  height: 100px;
+}
+
+#submit{
+  margin-top: 20px;
+  font-size: 12px;
+  color: white;
+  background-color: rgba(17,133,123,255);
+  border: 3px solid rgba(17,133,123,255);
+  border-radius: 25px;
+  width: 130px;
+  height: 40px;
+}
+
+#f-error{
+  color:red;
+  font-size: 15px;
+}
+
+/* ----------------Admin--------------------- */
+
+
+#a-container{
+  width: 550px;
+  height: 750px;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: -3px -3px 9px #aaa9a9a2,
+  3px 3px 7px rgba(147, 149, 151, 0.671);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#a-insideof-container{
+  width: 700px;
+  height: 750px;
+  font-size: 50px;
+  border: 3px solid rgba(255,253,0,255);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#a-username-input{
+  font-size: 30px;
+  width: 400px;
+  margin-top: 80px;
+  border:none;
+  border-bottom: 2px solid white;
+  outline: none;
+  background: rgba(255, 255, 255, 0);
+  color: white;
+}
+
+#a-password-input{
+  font-size: 30px;
+  width: 400px;
+  margin-top: 60px;
+  border-bottom: 2px solid black;
+  outline: none;
+  border:none;
+  border-bottom: 2px solid white;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+#a-submit{
+  margin-top: 20px;
+  font-size: 27px;
+  color:rgba(255,253,0,255);
+  background-color:white;
+  border: 3px solid rgba(255,253,0,255);
+  border-radius: 25px;
+  width: 180px;
+  height: 50px;
+}
+
+#a-heading{
+  font-size: 45px;
+  margin-top: 100px;
+  color: rgba(255,253,0,255);
+}
+
+
+/* ----------------Admin Details--------------------- */
+
+
+#ad-container{
+  background-color: white;
+  width: 700px;
+  height: 750px;
+  margin-top: 50px;
+  border-radius: 15px;
+  box-shadow: -3px -3px 9px #aaa9a9a2,
+  3px 3px 7px rgba(147, 149, 151, 0.671);
+  background: rgba(0, 0, 0, 0.5);
+  border: 3px solid cyan;
+}
+
+#ad-table{
+  margin-top: 100px;
+  font-size: 30px;
+  color: rgba(255,253,0,255);
+  border-color:rgba(8,165,169,255);
+  background: rgba(0, 0, 0, 0.5);
+  width: 1000px;
+  text-align: center;
+  border-color:#23d975;
+}
+
+#ad-tabletop{
+  font-size: 30px;
+  color: cyan;
+  background: rgba(0, 0, 0, 0);
+  border-color:#23d975;
+}
+
+#ad-btn{
+  font-size: 30px;
+  height: 50px;
+}
+
+#ad-header{
+  color: cyan;
+}
+
+/* -------------------Sign In---------------------- */
+
+#si-container{
+  width: 550px;
+  height: 750px;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: -3px -3px 9px #aaa9a9a2,
+  3px 3px 7px rgba(147, 149, 151, 0.671);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#si-insideof-container{
+  width: 700px;
+  height: 750px;
+  font-size: 50px;
+  border: 2px solid rgba(42,254,183,255);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#si-username-input{
+  font-size: 30px;
+  width: 400px;
+  margin-top: 60px;
+  border:none;
+  border-bottom: 2px solid white;
+  outline: none;
+  background: rgba(255, 255, 255, 0);
+  color: white;
+}
+
+#si-password-input{
+  font-size: 30px;
+  width: 400px;
+  margin-top: 60px;
+  border-bottom: 2px solid black;
+  outline: none;
+  border:none;
+  border-bottom: 2px solid white;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+#si-submit{
+  margin-top: 20px;
+  font-size: 26px;
+  color: rgba(42,254,183,255);
+  background-color:white;
+  border: 3px solid rgba(42,254,183,255);
+  border-radius: 25px;
+  width: 180px;
+  height: 50px;
+}
+
+#si-heading{
+  font-size: 45px;
+  margin-top: 100px;
+  color: rgba(42,254,183,255);
+}
+
+#si-heading2{
+  font-size: 18px;
+  margin-top: 40px;
+  color: white;
+}
+
+#si-body{
+  background-color: rgba(221,221,221,255);
+}
+
+#si-link{
+  color: black;
+}
+
+#si-paragraph{
+  font-size: 25px;
+  color: white;
+  margin-top:60px ;
+}
+
+#si-anchor{
+margin-top: 500px;
+}
+
+/* -------------------Sign Up---------------------- */
+
+#su-container{
+  width: 550px;
+  height: 750px;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: -3px -3px 9px #aaa9a9a2,
+  3px 3px 7px rgba(147, 149, 151, 0.671);
+  background: rgba(0, 0, 0, 0.5);  
+}
+
+#su-insideof-container{
+  width: 700px;
+  height: 750px;
+  font-size: 50px;
+  border: 2px solid cyan;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.su-username-input{
+  font-size: 30px;
+  width: 400px;
+  margin-top: 30px;
+  border:none;
+  border-bottom: 2px solid white;
+  outline: none;
+  background: rgba(255, 255, 255, 0);
+  color: white;
+}
+
+.su-other-input{
+  font-size: 30px;
+  width: 400px;
+  margin-top: 40px;
+  border-bottom: 2px solid black;
+  outline: none;
+  border:none;
+  border-bottom: 2px solid white;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+}
+
+.su-submit{
+  margin-top: 50px;
+  font-size: 27px;
+  color: cyan;
+  background-color:white;
+  border: 3px solid cyan;
+  border-radius: 25px;
+  width: 180px;
+  height: 50px;
+}
+
+#su-heading{
+  font-size: 45px;
+  margin-top: 20px;
+  color: cyan;
+}
+
+#error{
+  color:red;
+  font-size: 20px;
+}
+
