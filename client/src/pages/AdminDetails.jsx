@@ -3,7 +3,8 @@ import { getFeedbacks, deleteFeedback } from "../services/api";
 
 export default function AdminDetails() {
   const [info, setInfo] = useState([]);
-
+  const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
@@ -16,20 +17,21 @@ export default function AdminDetails() {
       }
     };
     fetchFeedbacks();
-  }, [info]);
-
+  }, []);
+  
   const handleDelete = async (name, email, feedback, rating) => {
     try {
       const confirmed = window.confirm("Are you sure you want to delete this record?");
       if (!confirmed) return;
-
+    
       await deleteFeedback({ name, email, feedback, rating });
       alert("Record Deleted");
-      setInfo(info.filter((e) => e.email !== email));
+      setInfo(info.filter(e => !(e.name === name && e.email === email && e.feedback === feedback && e.rating === rating)));
     } catch (err) {
       alert("Delete issue: " + err);
     }
   };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 via-pink-100 to-indigo-100 p-4">

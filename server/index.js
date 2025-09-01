@@ -8,18 +8,22 @@ app.use(cors());
 app.use(express.json());
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
 });
 
 pool.connect()
   .then(() => console.log("Database Connected"))
-  .catch(() => console.log("Error while connecting to database"));
+  .catch((err) => console.log(`Error while connecting to database ${err}`));
 
 // --------------------- LOGIN ---------------------
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
-    const sql = 'SELECT * FROM "user" WHERE email=$1';
+    const sql = 'SELECT * FROM users  WHERE email=$1';
     const result = await pool.query(sql, [email]);
 
     if (result.rows.length === 0)
@@ -74,7 +78,7 @@ app.delete("/delete", async (req, res) => {
 app.post("/user_save", async (req, res) => {
   const { username, email, phone, password, confirmpassword } = req.body;
   try {
-    const checkSql = 'SELECT * FROM "user" WHERE email=$1';
+    const checkSql = 'SELECT * FROM users  WHERE email=$1';
     const checkResult = await pool.query(checkSql, [email]);
 
     if (checkResult.rows.length > 0) {
@@ -85,7 +89,7 @@ app.post("/user_save", async (req, res) => {
     const hashedConfirm = await bcrypt.hash(confirmpassword, 10);
 
     const insertSql = `
-      INSERT INTO "user"(username, email, phone, password, confirmpassword)
+      INSERT INTO users (username, email, phone, password, confirmpassword)
       VALUES ($1, $2, $3, $4, $5)
     `;
     await pool.query(insertSql, [username, email, phone, hashedPassword, hashedConfirm]);
