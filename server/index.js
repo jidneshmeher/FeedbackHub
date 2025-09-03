@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { Pool } from "pg";
 import bcrypt from "bcryptjs";
+import cron from "node-cron";
 
 const app = express();
 app.use(cors());
@@ -121,7 +122,26 @@ app.post("/admin_login", async (req, res) => {
   }
 });
 
+// --------------------- HEALTH CHECK ---------------------
+
+app.get('/health', (req, res) => {
+  res.status(200).send('Server is alive');
+});
+
 const PORT = process.env.PORT || 9999;
 app.listen(PORT, () => {
   console.log(`Server ready @ ${PORT}`);
 });
+
+if (process.env.NODE_ENV === "production") {
+  cron.schedule("*/14 * * * *", async () => {
+    try {
+      const res = await fetch(`${process.env.BACKEND_URL}/health`);
+      if (!res.ok) {
+        console.error("Health ping failed, status:", res.status);
+      }
+    } catch (err) {
+      console.error("Health ping failed:", err);
+    }
+  });
+}
